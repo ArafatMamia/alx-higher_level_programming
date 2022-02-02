@@ -1,4 +1,4 @@
 --update the score
-UPDATE FROM second_table
-set score = 10
-where name = 'Bob'
+UPDATE second_table AS s
+SET s.score = 10
+WHERE s.name = "Bob";
