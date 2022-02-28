@@ -1,7 +1,9 @@
 #!/usr/bin/node
-let nums = process.argv.slice(2).map(x => Number(x));
-if (nums.length <= 1) {
-  console.log(0);
-} else {
-  console.log(nums.sort().reverse()[1]);
+'use strict';
+let nextMax = 0;
+let args = process.argv.slice(2);
+if (args.length > 1) {
+  args.sort();
+  nextMax = args[args.length - 2];
 }
+console.log(nextMax);
