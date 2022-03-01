@@ -1,7 +1,7 @@
 #!/usr/bin/node
 const process = require('process');
 let build = '';
-let failed = 'Missing number of occurrences';
+const failed = 'Missing number of occurrences';
 let num;
 let i;
 
