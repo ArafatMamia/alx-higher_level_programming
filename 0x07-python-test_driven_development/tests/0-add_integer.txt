@@ -79,4 +79,11 @@ Checking number with bool:
 	 >>> add_integer(0, False)
          Traceback (most recent call last):
          ...
-         TypeError: b must be an integer
+         TypeError: b must be an int
+
+checking no args:
+	>>> add_integer()
+	Traceback (most recent call last):
+	...
+	TypeError: add_integer() missing 2 required positional arguments: 'a' and 'b'
+
