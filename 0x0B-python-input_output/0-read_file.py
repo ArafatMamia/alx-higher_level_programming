@@ -1,5 +1,9 @@
 #!/usr/bin/python3
-""" contains ther read_file function """
+""" 
+contains ther read_file function
+"""
+
+
 
 def read_file(filename=""):
     """ the read_file function that read a text file and prints it """ 
