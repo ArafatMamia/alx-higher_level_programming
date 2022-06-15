@@ -19,4 +19,7 @@ def append_after(filename="", search_string="", new_string=""):
             if search_string in line:
                 new_text += new_string
         f.seek(0)
-        f.write(new_text
+        f.write(new_text)
+© 2022 GitHub, Inc.
+Terms
+P
