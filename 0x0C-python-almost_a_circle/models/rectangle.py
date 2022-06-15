@@ -1,14 +1,15 @@
 #!/usr/bin/python3
 """
-this is the rectangle module
+Contains the "Rectangle" class
 """
+
 from models.base import Base
 
 
 class Rectangle(Base):
-    """" Rectangle class """
+    """A representation of a rectangle"""
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Initializes the rectangle """
+        """Initializes the rectangle"""
         self.width = width
         self.height = height
         self.x = x
@@ -35,7 +36,6 @@ class Rectangle(Base):
         """getter of y"""
         return self.__y
 
-    
     @width.setter
     def width(self, value):
         """setter of width"""
@@ -73,11 +73,13 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """ are of the rectangle """
+        """calculates the area of the rectangle"""
         return self.__width * self.__height
+
     def display(self):
         """print a display of the rectangle"""
-        print(("\n" * self.__y) + "\n".join(((" " * self.__x) + ("#" * self.__width))
+        print(("\n" * self.__y) +
+              "\n".join(((" " * self.__x) + ("#" * self.__width))
                         for i in range(self.__height)))
 
     def __str__(self):
@@ -88,3 +90,38 @@ class Rectangle(Base):
                                                                  self.__width,
                                                                  self.__height)
 
+    def update(self, *args, **kwargs):
+        """updates multiple attributes"""
+        if len(args):
+            for i, a in enumerate(args):
+                if i == 0:
+                    self.id = a
+                elif i == 1:
+                    self.width = a
+                elif i == 2:
+                    self.height = a
+                elif i == 3:
+                    self.x = a
+                elif i == 4:
+                    self.y = a
+        else:
+            if "id" in kwargs:
+                self.id = kwargs["id"]
+            if "width" in kwargs:
+                self.width = kwargs["width"]
+            if "height" in kwargs:
+                self.height = kwargs["height"]
+            if "x" in kwargs:
+                self.x = kwargs["x"]
+            if "y" in kwargs:
+                self.y = kwargs["y"]
+
+    def to_dictionary(self):
+        """dictionary representation of a Rectangle"""
+        d = {}
+        d["id"] = self.id
+        d["width"] = self.width
+        d["height"] = self.height
+        d["x"] = self.x
+        d["y"] = self.y
+        return d
